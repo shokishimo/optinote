@@ -1,0 +1,173 @@
+@charset "utf-8";
+.top {
+    display: flex;
+}
+
+.topleft {
+    width: 75%;
+    text-align: center;
+}
+
+.topright {
+    width: 25%;
+    text-align: center;
+}
+
+/*============ navigation bar ============*/
+
+/* navigation whole setting */
+nav{
+    background:#96DED1;
+    color:#333;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* flatten the first layer of navigations */
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* set li to be relative */
+nav ul li{
+    position: relative;
+}
+
+/* navigation link settings */
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding:20px 35px;
+    transition:all .5s;
+}
+
+/* do not flatten the second layer of navigations */
+nav ul ul{
+    display: block;
+    margin: auto;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+nav ul li li a{
+    padding:10px 35px;
+}
+
+
+nav ul li a:hover{
+    color:#fff; 
+    border-radius: 5px;
+}
+
+/* seetings for the second layer */
+
+/* ul setting that has another layer*/
+nav li.has-another-layer ul{
+        /* specify absolute  */
+    position: absolute;
+    left:0;
+    top:62px;
+        /* specify the form */
+    background:#28BFE7;
+    width:180px;
+        /* hidden at first */
+    visibility: hidden;
+    opacity: 0;
+        /* animation setting */
+    transition: all .3s;
+}
+
+/* show when hover */
+nav li.has-another-layer:hover > ul,
+nav li.has-another-layer ul li:hover > ul,
+nav li.has-another-layer:active > ul,
+nav li.has-another-layer ul li:active > ul{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* form of navigation <a> tag*/
+nav li.has-another-layer ul li a{
+    color: #fff;
+    border-bottom:solid 1px rgba(255,255,255,0.6);
+}
+
+nav li.has-another-layer ul li a:hover,
+nav li.has-another-layer ul li a:active{
+    background:#3577CA;
+}
+
+/* form setting less than 768px */
+
+@media screen and (max-width:768px){
+nav{
+    padding: 0;
+}
+
+nav ul{
+    display: block;
+}
+
+nav li.has-another-layer ul,
+nav li.has-another-layer ul ul{
+    position: relative;
+    left:0;
+    top:0;
+    width:100%;
+    visibility:visible;/* show for a while to control by js */
+    opacity:1;/* show for a while to control by js */
+    display: none;/* hidden to show by slidetoggle of js */
+    transition:none;/* cut css animation to control by js */
+}
+
+nav ul li a{
+border-bottom:1px solid #ccc;
+}
+}
+
+
+/*=============== CSS for layout ===============*/
+
+h1{
+    font-size:2rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-style: italic;
+}
+
+h2{
+    font-size:1.2rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+p{
+    margin-top:20px;  
+}
+
+small {
+    background:#333;
+    color:#fff;
+    display: block;
+    text-align: center;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.memoDisplay {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+}
+
+.memoInput {
+    display:inline-block;
+}
+
+.memotitle {
+    vertical-align: top;    
+}

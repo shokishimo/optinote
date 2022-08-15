@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTINOTE</title>
+    <meta name="description"  content="Memo application">
+    <link rel="stylesheet" type="text/css" href="index_style.css">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="topleft">
+                <h1 class="optinote">Optinote</h1>
+            </div>
+            <div class="topright">
+                <p class="helloline">Hello Guest!</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="has-another-layer"><a>User setting</a>
+                    <ul>
+                        <li><a href="log_in.html">Log in</a></li>
+                        <li><a href="log_out">Log out</a></li>
+                        <li><a href="sign_up.html">Sign up</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="memoDisplay">
+            <form action="save_memo" method="post">
+                <div class="memoInput">
+                    <textarea class="memotitle" rows="3" cols="10" placeholder="title"></textarea>
+                    <textarea class="memodescription" rows="10" cols="30" placeholder="description"></textarea>
+                </div>
+                <div>
+                    <input class="submitbtn" type="submit" value="save">
+                    <input class="resetBtn" type="reset" value="reset">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <small>&copy; copyright.</small>  
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <script src="../scripts/index_script.js"></script>
+</body>
+</html>

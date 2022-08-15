@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\front_end",
+    "\\front_end\\html",
+    "\\middleware",
+    "\\middleware\\controllers"
+  ],
+  "SelectedNode": "\\middleware\\controllers\\registerController.js",
+  "PreviewInSolutionExplorer": false
+}
