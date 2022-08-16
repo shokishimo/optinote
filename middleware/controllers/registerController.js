@@ -1,4 +1,5 @@
 const User = require('../../model/User');
+const path = require('path');
 const bcrypt = require('bcrypt');
 const authController = require('../controllers/authController');
 
@@ -9,8 +10,9 @@ const handleNewUser = async (req, res) =>
     
     // check for duplicate usernames in the database
     const duplicate = await User.findOne({ username: username}).exec();
-    if (duplicate) return res.sendStatus(409); // there is already a user with the username passed in
-    
+    // there is already a user with the username passed in
+    if (duplicate) return res.sendFile(path.join(__dirname, '../../', 'front_end', 'html', 'usernameConflict.html'));
+
     try
     {
         // encrypt the password
